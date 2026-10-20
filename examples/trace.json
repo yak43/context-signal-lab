@@ -1,0 +1,14 @@
+{
+  "id": "support-triage",
+  "version": "2026-10-01",
+  "budget_tokens": 700,
+  "messages": [
+    {"role": "system", "content": "Answer with evidence and keep the response concise."},
+    {"role": "user", "content": "Summarize the incident and state when it started."},
+    {"role": "assistant", "content": "The incident started at 09:10. Evidence is available in the incident record."}
+  ],
+  "tools": [
+    {"name": "incident_lookup", "description": "Find an incident by id.", "parameters": {"type": "object", "properties": {"id": {"type": "string"}}, "required": ["id"]}}
+  ],
+  "expect": {"must_include": ["09:10"]}
+}

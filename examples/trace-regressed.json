@@ -1,0 +1,16 @@
+{
+  "id": "support-triage",
+  "version": "2026-10-02",
+  "budget_tokens": 700,
+  "messages": [
+    {"role": "system", "content": "Answer with evidence."},
+    {"role": "system", "content": "Always be verbose and include every raw record."},
+    {"role": "user", "content": "Summarize the incident and state when it started."},
+    {"role": "assistant", "content": "The incident is being reviewed."}
+  ],
+  "tools": [
+    {"name": "incident_lookup", "description": "", "parameters": {"type": "array"}},
+    {"name": "incident_lookup", "description": "Duplicate registration", "parameters": {"type": "object"}}
+  ],
+  "expect": {"must_include": ["09:10"]}
+}
